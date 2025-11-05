@@ -1,5 +1,4 @@
 import Hero from "../components/HomeComponents/Hero";
-import ProductCard from "../components/HomeComponents/ProductCard";
 import ProductsList from "../components/HomeComponents/ProductsList";
 
 function HomePage() {
