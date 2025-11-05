@@ -67,7 +67,7 @@ function NavbarComponent() {
             };
           }}
         >
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cart-shopping"></i>
         </NavLink>
         <NavLink
           to="/favourites"
@@ -79,7 +79,7 @@ function NavbarComponent() {
             };
           }}
         >
-          <i class="fa-solid fa-heart"></i>
+          <i className="fa-solid fa-heart"></i>
         </NavLink>
       </div>
     </nav>
