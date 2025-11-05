@@ -9,6 +9,7 @@ import CartPage from "./pages/CartPage.jsx";
 import FavouritesPage from "./pages/FavouritesPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import MainLayout from "./layouts/MainLayout.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/favourites",
         element: <FavouritesPage />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductPage />,
       },
     ],
   },
