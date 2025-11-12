@@ -1,4 +1,6 @@
 import { useParams } from "react-router";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
 import ButtonComponent from "../components/ButtonComponent";
 
@@ -6,6 +8,16 @@ import { useEffect, useState } from "react";
 
 function ProductPage() {
   const { id } = useParams();
+
+  const dispatch = useDispatch();
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        ...currentProduct,
+        quantity: quantite,
+      })
+    );
+  };
 
   const [currentProduct, setCurrentProduct] = useState({
     id: 0,
@@ -268,7 +280,7 @@ function ProductPage() {
             </button>
           </div>
 
-          <ButtonComponent title="Add to cart" />
+          <ButtonComponent title="Add to cart" onClick={handleAddToCart} />
 
           <button className="text-xl cursor-pointer">
             <i className="fa-solid fa-heart"></i>
