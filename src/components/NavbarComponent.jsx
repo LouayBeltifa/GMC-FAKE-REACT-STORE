@@ -1,6 +1,9 @@
 import { NavLink } from "react-router";
+import { useSelector } from "react-redux";
 
 function NavbarComponent() {
+  const itemCount = useSelector((state) => state.cart?.items?.length || 0);
+
   return (
     <nav className="flex p-5 gap-5 bg-emerald-400">
       <div>
@@ -67,7 +70,14 @@ function NavbarComponent() {
             };
           }}
         >
-          <i className="fa-solid fa-cart-shopping"></i>
+          <span className="relative inline-flex">
+            <i className="fa-solid fa-cart-shopping"></i>
+            {itemCount > 0 && (
+              <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                {itemCount}
+              </span>
+            )}
+          </span>
         </NavLink>
         <NavLink
           to="/favourites"

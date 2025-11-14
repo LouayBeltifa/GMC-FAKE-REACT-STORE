@@ -7,7 +7,7 @@ function ProductsList({ title, description, products }) {
       <p className="text-emerald-600 mb-5">{description}</p>
       <div className="flex gap-5 w-full flex-wrap justify-between">
         {products.map((product) => {
-          return <ProductCard product={product} />;
+          return <ProductCard product={product} key={product.name} />;
         })}
       </div>
     </div>
